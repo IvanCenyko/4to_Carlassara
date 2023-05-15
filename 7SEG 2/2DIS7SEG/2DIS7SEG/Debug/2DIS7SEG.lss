@@ -1,0 +1,373 @@
+
+2DIS7SEG.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000232  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001be  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800100  00800100  00000232  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000232  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000264  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000028  00000000  00000000  000002a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000006a9  00000000  00000000  000002cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000610  00000000  00000000  00000975  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000002f3  00000000  00000000  00000f85  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000048  00000000  00000000  00001278  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000382  00000000  00000000  000012c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000049  00000000  00000000  00001642  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000018  00000000  00000000  0000168b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 45 00 	jmp	0x8a	; 0x8a <__ctors_end>
+   4:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+   8:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+   c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  10:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  14:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  18:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  1c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  20:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  24:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  28:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  2c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  30:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  34:	0c 94 ac 00 	jmp	0x158	; 0x158 <__vector_13>
+  38:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  3c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  40:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  44:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  48:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  4c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  50:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  54:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  58:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  5c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  60:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  64:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  68:	81 00       	.word	0x0081	; ????
+  6a:	83 00       	.word	0x0083	; ????
+  6c:	85 00       	.word	0x0085	; ????
+  6e:	87 00       	.word	0x0087	; ????
+  70:	89 00       	.word	0x0089	; ????
+  72:	8b 00       	.word	0x008b	; ????
+  74:	8d 00       	.word	0x008d	; ????
+  76:	8f 00       	.word	0x008f	; ????
+  78:	91 00       	.word	0x0091	; ????
+  7a:	93 00       	.word	0x0093	; ????
+  7c:	9e 00       	.word	0x009e	; ????
+  7e:	a0 00       	.word	0x00a0	; ????
+  80:	a2 00       	.word	0x00a2	; ????
+  82:	a4 00       	.word	0x00a4	; ????
+  84:	a6 00       	.word	0x00a6	; ????
+  86:	a8 00       	.word	0x00a8	; ????
+  88:	aa 00       	.word	0x00aa	; ????
+
+0000008a <__ctors_end>:
+  8a:	11 24       	eor	r1, r1
+  8c:	1f be       	out	0x3f, r1	; 63
+  8e:	cf ef       	ldi	r28, 0xFF	; 255
+  90:	d8 e0       	ldi	r29, 0x08	; 8
+  92:	de bf       	out	0x3e, r29	; 62
+  94:	cd bf       	out	0x3d, r28	; 61
+
+00000096 <__do_clear_bss>:
+  96:	21 e0       	ldi	r18, 0x01	; 1
+  98:	a0 e0       	ldi	r26, 0x00	; 0
+  9a:	b1 e0       	ldi	r27, 0x01	; 1
+  9c:	01 c0       	rjmp	.+2      	; 0xa0 <.do_clear_bss_start>
+
+0000009e <.do_clear_bss_loop>:
+  9e:	1d 92       	st	X+, r1
+
+000000a0 <.do_clear_bss_start>:
+  a0:	a2 30       	cpi	r26, 0x02	; 2
+  a2:	b2 07       	cpc	r27, r18
+  a4:	e1 f7       	brne	.-8      	; 0x9e <.do_clear_bss_loop>
+  a6:	0e 94 59 00 	call	0xb2	; 0xb2 <main>
+  aa:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <_exit>
+
+000000ae <__bad_interrupt>:
+  ae:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b2 <main>:
+
+
+int main(void)
+{
+
+DDRB = 255;
+  b2:	8f ef       	ldi	r24, 0xFF	; 255
+  b4:	84 b9       	out	0x04, r24	; 4
+DDRD = 255;
+  b6:	8a b9       	out	0x0a, r24	; 10
+PORTB = 64;
+  b8:	80 e4       	ldi	r24, 0x40	; 64
+  ba:	85 b9       	out	0x05, r24	; 5
+PORTD = 64;
+  bc:	8b b9       	out	0x0b, r24	; 11
+
+TCNT1 = 49911;
+  be:	87 ef       	ldi	r24, 0xF7	; 247
+  c0:	92 ec       	ldi	r25, 0xC2	; 194
+  c2:	90 93 85 00 	sts	0x0085, r25	; 0x800085 <__DATA_REGION_ORIGIN__+0x25>
+  c6:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <__DATA_REGION_ORIGIN__+0x24>
+TCCR1B = 0X03;
+  ca:	83 e0       	ldi	r24, 0x03	; 3
+  cc:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__DATA_REGION_ORIGIN__+0x21>
+TIMSK1 = 0X01;
+  d0:	81 e0       	ldi	r24, 0x01	; 1
+  d2:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <__DATA_REGION_ORIGIN__+0xf>
+
+sei();
+  d6:	78 94       	sei
+	break;
+	case 7: PORTB = 120;
+	break;
+	case 8: PORTB = 0;
+	break;
+	case 9: PORTB = 16;
+  d8:	10 e1       	ldi	r17, 0x10	; 16
+	break;
+	case 5: PORTB = 18;
+	break;
+	case 6: PORTB = 2;
+	break;
+	case 7: PORTB = 120;
+  da:	d8 e7       	ldi	r29, 0x78	; 120
+	break;
+	case 4: PORTB = 25;
+	break;
+	case 5: PORTB = 18;
+	break;
+	case 6: PORTB = 2;
+  dc:	c2 e0       	ldi	r28, 0x02	; 2
+	break;
+	case 3:PORTB = 48;
+	break;
+	case 4: PORTB = 25;
+	break;
+	case 5: PORTB = 18;
+  de:	72 e1       	ldi	r23, 0x12	; 18
+	break;
+	case 2: PORTB = 36;
+	break;
+	case 3:PORTB = 48;
+	break;
+	case 4: PORTB = 25;
+  e0:	69 e1       	ldi	r22, 0x19	; 25
+	break;
+	case 1: PORTB = 121;
+	break;
+	case 2: PORTB = 36;
+	break;
+	case 3:PORTB = 48;
+  e2:	50 e3       	ldi	r21, 0x30	; 48
+switch (dnum) {
+	case 0: PORTB = 64;
+	break;
+	case 1: PORTB = 121;
+	break;
+	case 2: PORTB = 36;
+  e4:	44 e2       	ldi	r20, 0x24	; 36
+while (1)
+{
+switch (dnum) {
+	case 0: PORTB = 64;
+	break;
+	case 1: PORTB = 121;
+  e6:	39 e7       	ldi	r19, 0x79	; 121
+sei();
+
+while (1)
+{
+switch (dnum) {
+	case 0: PORTB = 64;
+  e8:	20 e4       	ldi	r18, 0x40	; 64
+
+sei();
+
+while (1)
+{
+switch (dnum) {
+  ea:	e0 91 01 01 	lds	r30, 0x0101	; 0x800101 <dnum>
+  ee:	8e 2f       	mov	r24, r30
+  f0:	90 e0       	ldi	r25, 0x00	; 0
+  f2:	8a 30       	cpi	r24, 0x0A	; 10
+  f4:	91 05       	cpc	r25, r1
+  f6:	c0 f4       	brcc	.+48     	; 0x128 <main+0x76>
+  f8:	fc 01       	movw	r30, r24
+  fa:	ec 5c       	subi	r30, 0xCC	; 204
+  fc:	ff 4f       	sbci	r31, 0xFF	; 255
+  fe:	0c 94 d7 00 	jmp	0x1ae	; 0x1ae <__tablejump2__>
+	case 0: PORTB = 64;
+ 102:	25 b9       	out	0x05, r18	; 5
+	break;
+ 104:	11 c0       	rjmp	.+34     	; 0x128 <main+0x76>
+	case 1: PORTB = 121;
+ 106:	35 b9       	out	0x05, r19	; 5
+	break;
+ 108:	0f c0       	rjmp	.+30     	; 0x128 <main+0x76>
+	case 2: PORTB = 36;
+ 10a:	45 b9       	out	0x05, r20	; 5
+	break;
+ 10c:	0d c0       	rjmp	.+26     	; 0x128 <main+0x76>
+	case 3:PORTB = 48;
+ 10e:	55 b9       	out	0x05, r21	; 5
+	break;
+ 110:	0b c0       	rjmp	.+22     	; 0x128 <main+0x76>
+	case 4: PORTB = 25;
+ 112:	65 b9       	out	0x05, r22	; 5
+	break;
+ 114:	09 c0       	rjmp	.+18     	; 0x128 <main+0x76>
+	case 5: PORTB = 18;
+ 116:	75 b9       	out	0x05, r23	; 5
+	break;
+ 118:	07 c0       	rjmp	.+14     	; 0x128 <main+0x76>
+	case 6: PORTB = 2;
+ 11a:	c5 b9       	out	0x05, r28	; 5
+	break;
+ 11c:	05 c0       	rjmp	.+10     	; 0x128 <main+0x76>
+	case 7: PORTB = 120;
+ 11e:	d5 b9       	out	0x05, r29	; 5
+	break;
+ 120:	03 c0       	rjmp	.+6      	; 0x128 <main+0x76>
+	case 8: PORTB = 0;
+ 122:	15 b8       	out	0x05, r1	; 5
+	break;
+ 124:	01 c0       	rjmp	.+2      	; 0x128 <main+0x76>
+	case 9: PORTB = 16;
+ 126:	15 b9       	out	0x05, r17	; 5
+
+}
+
+
+
+switch (lnum) {
+ 128:	e0 91 00 01 	lds	r30, 0x0100	; 0x800100 <_edata>
+ 12c:	f0 e0       	ldi	r31, 0x00	; 0
+ 12e:	e7 30       	cpi	r30, 0x07	; 7
+ 130:	f1 05       	cpc	r31, r1
+ 132:	d8 f6       	brcc	.-74     	; 0xea <main+0x38>
+ 134:	e2 5c       	subi	r30, 0xC2	; 194
+ 136:	ff 4f       	sbci	r31, 0xFF	; 255
+ 138:	0c 94 d7 00 	jmp	0x1ae	; 0x1ae <__tablejump2__>
+	case 0: PORTD = 64;
+ 13c:	2b b9       	out	0x0b, r18	; 11
+	break;
+ 13e:	d5 cf       	rjmp	.-86     	; 0xea <main+0x38>
+	case 1: PORTD = 121;
+ 140:	3b b9       	out	0x0b, r19	; 11
+	break;
+ 142:	d3 cf       	rjmp	.-90     	; 0xea <main+0x38>
+	case 2: PORTD = 36;
+ 144:	4b b9       	out	0x0b, r20	; 11
+	break;
+ 146:	d1 cf       	rjmp	.-94     	; 0xea <main+0x38>
+	case 3:PORTD = 48;
+ 148:	5b b9       	out	0x0b, r21	; 11
+	break;
+ 14a:	cf cf       	rjmp	.-98     	; 0xea <main+0x38>
+	case 4: PORTD = 25;
+ 14c:	6b b9       	out	0x0b, r22	; 11
+	break;
+ 14e:	cd cf       	rjmp	.-102    	; 0xea <main+0x38>
+	case 5: PORTD = 18;
+ 150:	7b b9       	out	0x0b, r23	; 11
+	break;
+ 152:	cb cf       	rjmp	.-106    	; 0xea <main+0x38>
+	case 6: PORTD = 2;
+ 154:	cb b9       	out	0x0b, r28	; 11
+	break;
+ 156:	c9 cf       	rjmp	.-110    	; 0xea <main+0x38>
+
+00000158 <__vector_13>:
+
+return 0;
+} 
+
+
+ISR (TIMER1_OVF_vect) {
+ 158:	1f 92       	push	r1
+ 15a:	0f 92       	push	r0
+ 15c:	0f b6       	in	r0, 0x3f	; 63
+ 15e:	0f 92       	push	r0
+ 160:	11 24       	eor	r1, r1
+ 162:	8f 93       	push	r24
+ 164:	9f 93       	push	r25
+	TCNT1 = 49911;
+ 166:	87 ef       	ldi	r24, 0xF7	; 247
+ 168:	92 ec       	ldi	r25, 0xC2	; 194
+ 16a:	90 93 85 00 	sts	0x0085, r25	; 0x800085 <__DATA_REGION_ORIGIN__+0x25>
+ 16e:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <__DATA_REGION_ORIGIN__+0x24>
+	
+    dnum++;
+ 172:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <dnum>
+ 176:	8f 5f       	subi	r24, 0xFF	; 255
+	
+	 if ( dnum > 9 ) {
+ 178:	8a 30       	cpi	r24, 0x0A	; 10
+ 17a:	18 f4       	brcc	.+6      	; 0x182 <__vector_13+0x2a>
+
+
+ISR (TIMER1_OVF_vect) {
+	TCNT1 = 49911;
+	
+    dnum++;
+ 17c:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <dnum>
+ 180:	07 c0       	rjmp	.+14     	; 0x190 <__vector_13+0x38>
+	
+	 if ( dnum > 9 ) {
+		 dnum = 0;
+ 182:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <dnum>
+		 lnum++;
+ 186:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
+ 18a:	8f 5f       	subi	r24, 0xFF	; 255
+ 18c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <_edata>
+	 }
+	 
+	 if ( lnum > 5 ) {
+ 190:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
+ 194:	86 30       	cpi	r24, 0x06	; 6
+ 196:	20 f0       	brcs	.+8      	; 0x1a0 <__vector_13+0x48>
+		 lnum = 0;
+ 198:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <_edata>
+		 dnum = 0;
+ 19c:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <dnum>
+	 }
+
+ 1a0:	9f 91       	pop	r25
+ 1a2:	8f 91       	pop	r24
+ 1a4:	0f 90       	pop	r0
+ 1a6:	0f be       	out	0x3f, r0	; 63
+ 1a8:	0f 90       	pop	r0
+ 1aa:	1f 90       	pop	r1
+ 1ac:	18 95       	reti
+
+000001ae <__tablejump2__>:
+ 1ae:	ee 0f       	add	r30, r30
+ 1b0:	ff 1f       	adc	r31, r31
+ 1b2:	05 90       	lpm	r0, Z+
+ 1b4:	f4 91       	lpm	r31, Z
+ 1b6:	e0 2d       	mov	r30, r0
+ 1b8:	09 94       	ijmp
+
+000001ba <_exit>:
+ 1ba:	f8 94       	cli
+
+000001bc <__stop_program>:
+ 1bc:	ff cf       	rjmp	.-2      	; 0x1bc <__stop_program>
